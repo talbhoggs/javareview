@@ -107,12 +107,12 @@ public class Main {
 		
 		List<Employee> listEmployees = new ArrayList<>();
 		
-		listEmployees.add(new Employee(1, "Charles","Amper",38,300));
-		listEmployees.add(new Employee(2, "Mary Joy","Bonita",31,7700));
-		listEmployees.add(new Employee(3, "Eric","Austria",21,100));
-		listEmployees.add(new Employee(4, "Devon","Zimmerman",38,1300));
-		listEmployees.add(new Employee(5, "Arnold","Nigen",33,3000));
-		listEmployees.add(new Employee(6, "Ben","Zimmerman",33,4000));
+		listEmployees.add(new Employee(1, "Charles","Amper",38,300, "developer"));
+		listEmployees.add(new Employee(2, "Mary Joy","Bonita",31,7700, "developer"));
+		listEmployees.add(new Employee(3, "Eric","Austria",21,100, "developer"));
+		listEmployees.add(new Employee(4, "Devon","Zimmerman",38,1300, "tester"));
+		listEmployees.add(new Employee(5, "Arnold","Nigen",33,3000,"manager"));
+		listEmployees.add(new Employee(6, "Ben","Zimmerman",33,4000, "manager"));
 		Optional<Employee> em = listEmployees.stream().filter(p -> p.getLastName().equals("Zimmerman")).findFirst();
 		Optional<Employee> em1 = listEmployees.stream().filter(p -> p.getLastName().equals("Zimmerman")).findAny();
 		
@@ -149,6 +149,18 @@ public class Main {
 		System.out.println("===================MAP");
 		Map<Integer, Employee> maplist = listEmployees.stream().collect(Collectors.toMap(Employee::getId, p->p));
 		System.out.println(maplist);
+		System.out.println("===================GROUP BY");
+		
+		Map<String, List<Employee>> mapEmp = list.stream().collect(Collectors.groupingBy(e -> e.getPosition()));
+		
+		mapEmp.forEach((k, v) -> {
+			System.out.println(k + " " + v);
+		});
+		
+		mapEmp.values().stream().forEachOrdered(p->{
+			System.out.println(p);
+		});
+		
 	}
 }
 

@@ -13,16 +13,26 @@ public class Employee {
 	private String lastName;
 	private Integer age;
 	private Integer salary;
+	private String position;
 	
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
 	public Employee() {}
 	
-	public Employee(Integer id, String firstName, String lastName, Integer age, Integer salary) {
+	public Employee(Integer id, String firstName, String lastName, Integer age, Integer salary, String position) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
 		this.salary = salary;
 		this.id = id;
+		this.position = position;
 	}
 
 	public String getFirstName() {
