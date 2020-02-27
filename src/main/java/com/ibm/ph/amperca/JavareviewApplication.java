@@ -24,9 +24,25 @@ public class JavareviewApplication {
 	// predefine
 	// Employee
 	
-
-
+	
+	public static void main(String[] args) {
+		String reverse1 = "Charles";
+		System.out.println(" >>> " + reverseString(reverse1));
+		
+	}
+	
+	public static String reverseString(String value) {
+		
+		char[] a = value.toCharArray();
+		StringBuffer va = new StringBuffer();
+		for(int i1 = a.length-1; i1>=0; i1--) {
+			va.append(a[i1]);
+		}
+		
+		return va.toString();
+	}
 }
+
 
 
 

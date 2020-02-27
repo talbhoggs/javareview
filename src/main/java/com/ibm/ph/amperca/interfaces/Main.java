@@ -97,7 +97,8 @@ interface TotalSalary {
 	public Double bonuses();
 }
 
-class Employee implements TotalSalary {
+class Employee implements TotalSalary 
+{
 	public Employee() {
 	}
 

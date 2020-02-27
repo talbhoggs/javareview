@@ -27,6 +27,9 @@ public class Main {
 		listUser.add(new User(2, "James"));
 		//listUser.add(null);
  		
+		
+		//listUser.sort(new UserSortById());
+		listUser.sort(new UserSortByName());
 		for(User user : listUser) {
 			System.out.println(user.toString());
 		}
@@ -40,7 +43,7 @@ public class Main {
 		// Set
 		// sorted
 		// does not allow duplicate
-		Set<User> setUsers = new TreeSet<>();
+		Set<User> setUsers = new TreeSet<>(new UserSortByName());
 		setUsers.add(new User(1, "Charles"));
 		setUsers.add(new User(2, "Ambre"));
 		setUsers.add(new User(4, "Bailey"));

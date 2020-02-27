@@ -19,6 +19,12 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		
+		// (input argumetns) -> logic
+		// x -> x*x;
+		// (x, y) -> { logic here };
+		// (String x) -> System.out.println(x)
+		
 		// Stream pipeline is consist of the following:
 		// A source
 		// 0 of more intermediate operation -> map, filter
