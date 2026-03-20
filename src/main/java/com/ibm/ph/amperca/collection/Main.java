@@ -28,13 +28,35 @@ public class Main {
 		//listUser.add(null);
  		
 		
+
 		//listUser.sort(new UserSortById());
 		listUser.sort(new UserSortByName());
 		for(User user : listUser) {
 			System.out.println(user.toString());
 		}
 		
+		Collections.sort(listUser, new UserSortById());		
+		System.out.println("Sort by id - using Collections");
+		for(User user : listUser) {
+			System.out.println(user.toString());
+		}
+
+		List<UserComparable> listUserComparable = new ArrayList<>();
+		listUser.add(new User(6, "Charles"));
+		listUser.add(new User(9, "Will"));
+		listUser.add(new User(2, "James"));
+		listUser.add(new User(5, "Devon"));
+		listUser.add(new User(4, "Bailey"));
+
+
+		Collections.sort(listUserComparable);
+		System.out.println("Sort by natural order");
+		for(UserComparable user : listUserComparable) {
+			System.out.println(user.toString());
+		}
+		
 		System.out.println("-------- Stream ---------");
+	
 		
 		Predicate<User> pUser = t-> t.getId() == 1;
 		
